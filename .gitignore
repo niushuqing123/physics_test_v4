@@ -1,0 +1,49 @@
+# =============================================================================
+# .gitignore — Physics Debug Platform
+# =============================================================================
+# build/ 目录里包含：
+#   - CMake 生成的项目文件（.sln / .vcxproj 等）
+#   - 编译产物（.obj / .lib / .exe 等）
+#   - FetchContent 自动下载并编译的第三方库：
+#       build/_deps/joltphysics-src/   (JoltPhysics v5.3.0 源码)
+#       build/_deps/joltphysics-build/ (JoltPhysics 编译产物，~266MB)
+#       build/_deps/raylib-src/        (raylib 5.5 源码)
+#       build/_deps/raylib-build/      (raylib 编译产物，~30MB)
+#
+# 第三方依赖无需放入仓库，clone 后执行以下命令即可自动还原：
+#   cmake -B build -G "Visual Studio 17 2022"
+#   cmake --build build --config Debug
+# =============================================================================
+
+# --- 构建目录（含所有编译产物和自动下载的依赖） ---
+build/
+
+# --- CMake 用户级缓存 ---
+CMakeUserPresets.json
+
+# --- 编译产物（万一在根目录有散落文件） ---
+*.exe
+*.obj
+*.pdb
+*.ilk
+*.exp
+*.lib
+*.dll
+
+# --- Visual Studio ---
+.vs/
+*.user
+*.suo
+*.aps
+
+# --- Windows ---
+Thumbs.db
+Desktop.ini
+
+# --- macOS ---
+.DS_Store
+
+# --- 编辑器临时文件 ---
+*.swp
+*.swo
+*~

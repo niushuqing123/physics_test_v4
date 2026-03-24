@@ -43,6 +43,9 @@ Desktop.ini
 # --- macOS ---
 .DS_Store
 
+# --- Java 编译产物 ---
+*.class
+
 # --- 编辑器临时文件 ---
 *.swp
 *.swo
